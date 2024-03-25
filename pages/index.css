@@ -1,0 +1,111 @@
+@import url("../vendor/normalize.css");
+@import url("../blocks/page.css");
+@import url("../blocks/header.css");
+@import url("../blocks/card.css");
+@import url("../blocks/profile.css");
+@import url("../blocks/footer.css");
+
+h2 {
+  font-family: "Inter", "Arial", sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 1.2;
+  letter-spacing: 0em;
+  text-align: left;
+  height: 29px;
+  width: 187px;
+  margin: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 320px) {
+  .page__section {
+    max-width: 320px;
+    max-height: 56px;
+  }
+
+  .profile {
+    flex-direction: column;
+    max-width: 282px;
+    max-height: 286px;
+    margin: 0;
+  }
+
+  .profile__info {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 282px;
+    max-height: 50px;
+    justify-content: center;
+    margin: 30px 0 36px;
+    row-gap: 10px;
+  }
+
+  .profile__description {
+    width: 100%;
+    font-family: "Inter", "Arial", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: 0em;
+    text-align: center;
+    height: 14px;
+  }
+
+  .profile__title {
+    font-family: "Inter", "Arial", sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: 0em;
+    text-align: center;
+  }
+
+  .profile__edit-button {
+    max-height: 18px;
+    max-width: 18px;
+    border: 1px solid white;
+    margin: 4.5px 0;
+  }
+
+  .profile__add-button {
+    background: transparent url(../images/add-icon-mobile.svg) center no-repeat;
+    display: flex;
+    height: 50px;
+    width: 282px;
+    margin: auto;
+    border-radius: 2px;
+    justify-content: center;
+  }
+
+  .profile__image {
+    margin: 0;
+  }
+
+  .card__list {
+    max-width: 282px;
+    max-height: 2266px;
+    margin: 0;
+  }
+
+  .footer {
+    display: flex;
+    position: relative;
+  }
+
+  .footer__copyright {
+    font-family: "Inter", "Arial", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.2;
+    text-align: left;
+    color: #545454;
+    max-width: 282px;
+    max-height: 14px;
+    margin-left: 19px;
+    text-wrap: nowrap;
+  }
+}

@@ -22,14 +22,20 @@ h2 {
 }
 
 @media screen and (max-width: 320px) {
-  .page__section {
-    max-width: 320px;
-    position: relative;
-    width: 100%;
+  .header.page__section {
+    width: 320px;
+    height: 56px;
+    margin-top: 28px;
+  }
+  .header__image {
+    width: 126px;
+    height: 24px;
   }
 
-  .page__content {
-    margin: auto;
+  .profile.page__section {
+    max-width: 282px;
+    position: relative;
+    width: 100%;
   }
 
   .profile {
@@ -115,3 +121,4 @@ h2 {
     margin-left: 19px;
     text-wrap: nowrap;
   }
+}

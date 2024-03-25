@@ -24,21 +24,26 @@ h2 {
 @media screen and (max-width: 320px) {
   .page__section {
     max-width: 320px;
-    max-height: 56px;
+    position: relative;
+    width: 100%;
+  }
+
+  .page__content {
+    margin: auto;
   }
 
   .profile {
+    display: flex;
     flex-direction: column;
-    max-width: 282px;
-    max-height: 286px;
+    justify-content: center;
     margin: 0;
   }
 
   .profile__info {
     display: flex;
     flex-wrap: wrap;
-    max-width: 282px;
-    max-height: 50px;
+    width: 282px;
+    height: 50px;
     justify-content: center;
     margin: 30px 0 36px;
     row-gap: 10px;
@@ -62,13 +67,16 @@ h2 {
     line-height: 1.2;
     letter-spacing: 0em;
     text-align: center;
+    height: 22px;
+    width: 196px;
+    margin-left: auto;
   }
 
   .profile__edit-button {
     max-height: 18px;
     max-width: 18px;
     border: 1px solid white;
-    margin: 4.5px 0;
+    margin: 4px 0;
   }
 
   .profile__add-button {
@@ -76,7 +84,7 @@ h2 {
     display: flex;
     height: 50px;
     width: 282px;
-    margin: auto;
+    margin: 0;
     border-radius: 2px;
     justify-content: center;
   }
@@ -87,7 +95,6 @@ h2 {
 
   .card__list {
     max-width: 282px;
-    max-height: 2266px;
     margin: 0;
   }
 
@@ -108,4 +115,3 @@ h2 {
     margin-left: 19px;
     text-wrap: nowrap;
   }
-}

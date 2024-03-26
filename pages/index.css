@@ -4,6 +4,7 @@
 @import url("../blocks/card.css");
 @import url("../blocks/profile.css");
 @import url("../blocks/footer.css");
+@import url("../blocks/fonts.css");
 
 h2 {
   font-family: "Inter", "Arial", sans-serif;
@@ -26,16 +27,21 @@ h2 {
     width: 320px;
     height: 56px;
     margin-top: 28px;
+    border-radius: 0;
+    border-bottom-style: solid;
+    border-bottom-color: #545454;
   }
   .header__image {
     width: 126px;
     height: 24px;
+    margin-left: 27px;
   }
 
   .profile.page__section {
     max-width: 282px;
     position: relative;
     width: 100%;
+    margin-top: 42px;
   }
 
   .profile {

@@ -3,3 +3,8 @@
   width: 880px;
   height: 74px;
 }
+
+.header.page__section {
+  border-bottom-color: #545454;
+  border-bottom-style: solid;
+}

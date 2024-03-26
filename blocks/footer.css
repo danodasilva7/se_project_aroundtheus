@@ -1,6 +1,9 @@
 .footer {
   display: flex;
   position: relative;
+  width: 880px;
+  margin-top: 67px;
+  align-self: center;
 }
 
 .footer__copyright {
@@ -11,5 +14,5 @@
   color: #545454;
   max-width: 318px;
   max-height: 18px;
-  margin-left: 200px;
+  margin: 0;
 }

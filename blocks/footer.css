@@ -16,3 +16,27 @@
   max-height: 18px;
   margin: 0;
 }
+
+@media screen and (max-width: 320px) {
+  .footer {
+    display: flex;
+    position: relative;
+    width: 320px;
+    margin-top: 48px;
+    margin-bottom: 36px;
+    align-self: center;
+  }
+
+  .footer__copyright {
+    font-family: "Inter", "Arial", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.2;
+    text-align: left;
+    color: #545454;
+    width: 282px;
+    height: 14px;
+    margin-left: 19px;
+    text-wrap: nowrap;
+  }
+}

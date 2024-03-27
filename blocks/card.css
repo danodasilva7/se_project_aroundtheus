@@ -50,3 +50,10 @@
   opacity: 50%;
   cursor: pointer;
 }
+
+@media screen and (max-width: 320px) {
+  .footer {
+    display: flex;
+    position: relative;
+  }
+}

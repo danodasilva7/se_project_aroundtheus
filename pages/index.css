@@ -1,23 +1,8 @@
 @import url("../vendor/normalize.css");
+@import url("../blocks/fonts.css");
 @import url("../blocks/page.css");
 @import url("../blocks/header.css");
 @import url("../blocks/card.css");
 @import url("../blocks/profile.css");
 @import url("../blocks/footer.css");
-@import url("../blocks/fonts.css");
-
-h2 {
-  font-family: "Inter", "Arial", sans-serif;
-  font-size: 24px;
-  font-weight: 900;
-  line-height: 1.2;
-  letter-spacing: 0em;
-  text-align: left;
-  height: 29px;
-  width: 187px;
-  margin: 0;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
+@import url("../blocks/cards.css");

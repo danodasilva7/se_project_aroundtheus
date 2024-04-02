@@ -2,7 +2,7 @@
   display: flex;
   position: relative;
   width: 880px;
-  margin-top: 67px;
+  margin: 67px 0 60px;
   align-self: center;
 }
 
@@ -13,7 +13,6 @@
   line-height: 1.2;
   color: #545454;
   max-width: 318px;
-  max-height: 18px;
   margin: 0;
 }
 
@@ -35,8 +34,7 @@
     text-align: left;
     color: #545454;
     width: 282px;
-    height: 14px;
-    margin-left: 19px;
+    margin: auto;
     text-wrap: nowrap;
   }
 }

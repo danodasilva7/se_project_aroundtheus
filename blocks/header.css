@@ -1,23 +1,22 @@
 .header {
   margin-top: 45px;
   width: 880px;
-  height: 74px;
+  border-bottom: 1px solid rgba(84, 84, 84, 1);
+  opacity: 70%;
 }
 
-.header.page__section {
-  border-bottom-color: #545454;
-  border-bottom-style: solid;
+.header__image {
+  margin-bottom: 36px;
 }
 
 @media screen and (max-width: 320px) {
-  .header.page__section {
-    max-width: 320px;
-    height: 56px;
-    margin-top: 28px;
-    border-radius: 0;
-    border-bottom-style: solid;
-    border-bottom-color: #545454;
+  .header {
+    height: 55px;
+    width: 320px;
+    margin: 28px 0 42px;
+    border-bottom: 1px solid rgba(84, 84, 84, 1);
   }
+
   .header__image {
     width: 126px;
     height: 24px;

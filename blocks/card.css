@@ -15,30 +15,45 @@
   display: flex;
   background-color: white;
   color: rgba(0, 0, 0, 1);
+  padding: 0;
   align-items: center;
-  justify-content: space-around;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  font-family: "Inter", "Arial", sans-serif;
-  font-weight: 900;
-  line-height: 1.2;
-  max-width: 282px;
-  height: 79px;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+  height: 79px;
+  font-family: "Inter", "Arial", sans-serif;
+  font-weight: 900;
+  line-height: 1.2;
 }
 
 .card__like-button {
   background: transparent url(../images/like-inactive.svg) center no-repeat;
   width: 21px;
   height: 18px;
+  margin: 0 20px 0 auto;
   border: none;
-  margin-bottom: 5px;
   padding: 0;
 }
 
 .card__like-button:hover {
   opacity: 50%;
   cursor: pointer;
+}
+
+@media screen and (max-width: 320px) {
+  .card__like-button {
+    background: transparent url(../images/like-inactive.svg) center no-repeat;
+    width: 21px;
+    height: 18px;
+    margin: 0 20px 0 auto;
+    border: none;
+    padding: 0;
+  }
+
+  card__like-button:hover {
+    opacity: 50%;
+    cursor: pointer;
+  }
 }

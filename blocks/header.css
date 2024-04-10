@@ -1,6 +1,7 @@
 .header {
   margin-top: 45px;
   width: 880px;
+  color: #ffffff;
   border-bottom: 1px solid rgba(84, 84, 84, 1);
   opacity: 70%;
 }
@@ -13,6 +14,7 @@
   .header {
     height: 55px;
     width: 320px;
+    color: #ffffff;
     margin: 28px 0 42px;
     border-bottom: 1px solid rgba(84, 84, 84, 1);
   }

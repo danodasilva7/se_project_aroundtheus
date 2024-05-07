@@ -20,3 +20,5 @@ Everything in the project was recently used in previous projects besides Figma a
 ## Prjoect Description
 
 Simply created a functioning website that includes responsive design to resolutions of 320px, 775px, and 1280px or >. Everything acquired to design the project the website was from Figma; Images, Buttons, Fonts, Colors, Opacity, Pointers, Width, Height, and Margins. This website should respond accordingly to each of the different resolutions. This includes the Fonts, Images, Buttons, and Title.
+
+[danodasilva7.github.io.](https://danodasilva7.github.io./)

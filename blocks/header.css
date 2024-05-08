@@ -9,6 +9,18 @@
   margin-bottom: 36px;
 }
 
+@media screen and (max-width: 879px) {
+  .header {
+    max-width: 581px;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .header {
+    max-width: 282px;
+  }
+}
+
 @media screen and (max-width: 320px) {
   .header {
     max-width: 320px;

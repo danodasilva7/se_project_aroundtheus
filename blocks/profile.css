@@ -20,8 +20,7 @@
   grid-area: button;
   margin: 14px 0 4px 18px;
   padding: 0;
-  border: 1px;
-  border-color: #ffffff;
+  border: 1px solid #ffffff;
   align-items: center;
 }
 
@@ -36,8 +35,7 @@
   width: 150px;
   margin-left: auto;
   padding: 0;
-  border-color: white;
-  border: 2px;
+  border: 2px solid #ffffff;
 }
 
 .profile__add-button:hover {
@@ -49,14 +47,14 @@
   font-family: "Inter", "Arial", sans-serif;
   font-size: 42px;
   font-weight: 500;
-  line-height: 48px;
+  line-height: 1.2;
   letter-spacing: 0em;
   text-align: left;
   grid-area: title;
   margin: 0;
-  width: 373px;
+  max-width: 373px;
   white-space: nowrap;
-  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .profile__description {
@@ -68,6 +66,9 @@
   text-align: left;
   grid-area: description;
   margin: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .profile__image {
@@ -83,7 +84,6 @@
   .profile {
     display: flex;
     flex-direction: column;
-    text-align: center;
     width: 282px;
     margin: auto;
   }
@@ -100,11 +100,7 @@
 
   .profile__description {
     width: 100%;
-    font-family: "Inter", "Arial", sans-serif;
     font-size: 14px;
-    font-weight: 400;
-    line-height: 1.2;
-    letter-spacing: 0em;
     text-align: center;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -112,23 +108,17 @@
   }
 
   .profile__title {
-    font-family: "Inter", "Arial", sans-serif;
     font-size: 22px;
     font-weight: 500;
-    line-height: 1.2;
-    letter-spacing: 0em;
     text-align: center;
     width: 196px;
     margin-left: 30px;
-    white-space: nowrap;
-    text-overflow: ellipsis;
     overflow: hidden;
   }
 
   .profile__edit-button {
     max-height: 18px;
     max-width: 18px;
-    border: 1px solid white;
     margin-top: 2px;
     margin-bottom: 2px;
   }
@@ -136,8 +126,7 @@
   .profile__add-button {
     background: transparent url(../images/add-icon-mobile.svg) center no-repeat;
     display: flex;
-    height: 50px;
-    width: 282px;
+    max-width: 282px;
     margin: 0;
     border-radius: 2px;
     justify-content: center;

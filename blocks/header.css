@@ -1,8 +1,8 @@
 .header {
   margin-top: 45px;
-  width: 880px;
+  max-width: 880px;
   color: #ffffff;
-  border-bottom: 1px solid rgba(84, 84, 84, 70%);
+  border-bottom: 1px solid rgba(84, 84, 84, 0.7);
 }
 
 .header__image {
@@ -11,10 +11,8 @@
 
 @media screen and (max-width: 320px) {
   .header {
-    width: 320px;
-    color: #ffffff;
+    max-width: 320px;
     margin: 28px 0 42px;
-    border-bottom: 1px solid rgba(84, 84, 84, 1);
   }
 
   .header__image {

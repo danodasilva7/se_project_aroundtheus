@@ -9,21 +9,14 @@
   margin-bottom: 36px;
 }
 
-@media screen and (max-width: 879px) {
+@media screen and (max-width: 919px) {
   .header {
     max-width: 581px;
   }
 }
 
-@media screen and (max-width: 580px) {
+@media screen and (max-width: 620px) {
   .header {
-    max-width: 282px;
-  }
-}
-
-@media screen and (max-width: 320px) {
-  .header {
-    max-width: 320px;
     margin: 28px 0 42px;
   }
 

@@ -117,13 +117,15 @@
         <form class="modal__form">
           <input
             type="text"
-            name="Name"
-            placeholder="Name"
+            name="Title"
+            id="profile-title-input"
+            placeholder="Title"
             class="modal__name"
           />
           <input
             type="text"
             name="Description"
+            id="profile-description-input"
             placeholder="Description"
             class="modal__description"
           />
@@ -131,6 +133,17 @@
         </form>
       </div>
     </div>
+
+    <template id="card-template">
+      <li class="card">
+        <img src="" class="card__image" alt="" />
+        <div class="card__description">
+          <h2 class="card__title"></h2>
+          <button type="button" class="card__like-button"></button>
+        </div>
+      </li>
+    </template>
+
     <script src="./scripts/index.js"></script>
   </body>
 </html>

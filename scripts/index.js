@@ -27,23 +27,23 @@ const initialCards = [
 
 /*----------------------------Elements----------------------------*/
 
-const profileeditButton = document.querySelector("#profile-edit-button");
-const profileeditModal = document.querySelector("#profile-edit-modal");
-const modalcloseButton = document.querySelector("#modal-close-button");
+const profileEditButton = document.querySelector("#profile-edit-button");
+const profileEditModal = document.querySelector("#profile-edit-modal");
+const modalCloseButton = document.querySelector("#modal-close-button");
 const profileTitle = document.querySelector(".profile__title");
 const profileDescription = document.querySelector(".profile__description");
 const profileTitleInput = document.querySelector("#profile-title-input");
 const profileDescriptionInput = document.querySelector(
   "#profile-description-input"
 );
-const profileEditForm = profileeditModal.querySelector(".modal__form");
+const profileEditForm = profileEditModal.querySelector(".modal__form");
 const cardListEl = document.querySelector(".cards__list");
 const cardTemplate =
   document.querySelector("#card-template").content.firstElementChild;
 
 /*---------------------------Functions--------------------------*/
 function closePopup() {
-  profileeditModal.classList.remove("modal__opened");
+  profileEditModal.classList.remove("modal_opened");
 }
 
 function getCardElement(cardData) {
@@ -53,9 +53,9 @@ function getCardElement(cardData) {
   const cardImageEl = cardElement.querySelector(".card__image");
   const cardTitleEl = cardElement.querySelector(".card__title");
   //set the path to the image to the link field of the object
-  cardImageEl.content = cardData.link;
+  cardImageEl.src = cardData.link;
   //set the image alt text to the name field of the object
-  cardImageEl.textContent = cardData.name;
+  cardImageEl.alt = cardData.name;
   //set the card title to the name field of the object, too
   cardTitleEl.textContent = cardData.name;
   //return the ready HTML element with the filled-in data
@@ -71,13 +71,13 @@ function handleProfileEditSubmit(e) {
 }
 
 /*------------------------Event Listeners-----------------------*/
-profileeditButton.addEventListener("click", () => {
+profileEditButton.addEventListener("click", () => {
   profileTitleInput.value = profileTitle.textContent;
   profileDescriptionInput.value = profileDescription.textContent;
-  profileeditModal.classList.add("modal__opened");
+  profileEditModal.classList.add("modal_opened");
 });
 
-modalcloseButton.addEventListener("click", closePopup);
+modalCloseButton.addEventListener("click", closePopup);
 
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 

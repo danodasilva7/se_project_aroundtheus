@@ -97,14 +97,6 @@
   cursor: pointer;
 }
 
-.modal__input:last-of-type {
-  height: 27px;
-  margin: 0;
-  padding: 0;
-  border: 1px;
-  border-bottom: solid rgba(0, 0, 0, 0.2);
-}
-
 @media screen and (max-width: 620px) {
   .modal__form {
     display: grid;

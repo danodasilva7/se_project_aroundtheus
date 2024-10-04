@@ -45,7 +45,7 @@
   opacity: 60%;
 }
 
-.modal__heading {
+.modal__title {
   max-width: 330px;
   max-height: 23px;
   font-family: "Inter", "Arial", sans-serif;
@@ -136,7 +136,7 @@
     margin: 5px 22px 25px;
   }
 
-  .modal__heading {
+  .modal__title {
     max-width: 238px;
     max-height: 22px;
     font-family: "Inter", "Arial", sans-serif;

@@ -44,7 +44,7 @@
   cursor: pointer;
 }
 
-.profile__title {
+.profile__name {
   font-family: "Inter", "Arial", sans-serif;
   font-size: 42px;
   font-weight: 500;
@@ -110,7 +110,7 @@
     text-align: center;
   }
 
-  .profile__title {
+  .profile__name {
     font-size: 22px;
     text-align: center;
     width: 196px;

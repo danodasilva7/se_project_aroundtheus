@@ -98,9 +98,9 @@ function handleProfileEditSubmit(e) {
 
 function handleAddCardFormSubmit(e) {
   e.preventDefault();
-  const title = cardTitleInput.value;
+  const name = cardTitleInput.value;
   const link = cardUrlInput.value;
-  renderCard({ title, link }, cardListEl);
+  renderCard({ name, link }, cardListEl);
   closePopup(addCardModal);
 }
 

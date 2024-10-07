@@ -38,7 +38,6 @@
   background: transparent url("../images/like-inactive.svg") center no-repeat;
   width: 21px;
   height: 19px;
-  background-size: 21px 18px;
   margin: 0 20px;
   border: none;
   padding: 0;
@@ -49,6 +48,21 @@
 }
 
 .card__like-button:hover {
-  opacity: 0.5;
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.card__delete-button {
+  background: transparent url("../images/Trash.svg") center no-repeat;
+  position: absolute;
+  width: 18px;
+  height: 19.3px;
+  padding: 0;
+  border: none;
+  margin: 18px 15px auto 249px;
+}
+
+.card__delete-button:hover {
+  opacity: 0.6;
   cursor: pointer;
 }

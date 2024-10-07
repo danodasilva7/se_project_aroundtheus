@@ -36,6 +36,10 @@ const profileEditModal = document.querySelector("#profile-edit-modal");
 const addCardModal = document.querySelector("#add-card-modal");
 const addCardFormElement = addCardModal.querySelector(".modal__form");
 const profileEditForm = profileEditModal.querySelector(".modal__form");
+const previewImageModal = document.querySelector("#preview-image-modal");
+const previewImageModalimg = previewImageModal.querySelector(".modal__image");
+const previewImageModalCaption =
+  previewImageModal.querySelector(".modal__caption");
 
 // Buttons and other DOM nodes
 const profileModalCloseButton = profileEditModal.querySelector(".modal__close");
@@ -44,7 +48,9 @@ const addNewCardButton = document.querySelector(".profile__add-button");
 const profileEditButton = document.querySelector(".profile__edit-button");
 const profileName = document.querySelector(".profile__name");
 const profileDescription = document.querySelector(".profile__description");
-
+previewImageCloseButton = previewImageModal.querySelector(
+  "#modal-close-button"
+);
 // Form Data
 const nameInput = profileEditForm.querySelector(".modal__input_type_name");
 const jobInput = profileEditForm.querySelector(
@@ -76,6 +82,22 @@ function getCardElement(cardData) {
   const cardImageEl = cardElement.querySelector(".card__image");
   const cardTitleEl = cardElement.querySelector(".card__title");
   const likeButton = cardElement.querySelector(".card__like-button");
+  // find delete button
+  const cardDeleteButton = cardElement.querySelector(".card__delete-button");
+
+  // add event listener to delete button
+  // cardElement.remove();
+  cardDeleteButton.addEventListener("click", () => {
+    cardElement.remove("card");
+  });
+
+  cardImageEl.addEventListener("click", () => {
+    previewImageModalimg.setAttribute("src", cardData.link);
+    previewImageModalimg.setAttribute("alt", cardData.name);
+    previewImageModalCaption.textContent = cardData.name;
+    openPopup(previewImageModal);
+  });
+  //openPopup with previewImageModal
 
   likeButton.addEventListener("click", () => {
     likeButton.classList.toggle("card__like-button_active");
@@ -122,11 +144,8 @@ addCardModalCloseButton.addEventListener("click", () =>
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 addCardFormElement.addEventListener("submit", handleAddCardFormSubmit);
 
-initialCards.forEach((cardData) => renderCard(cardData, cardListEl));
+previewImageCloseButton.addEventListener("click", () =>
+  closePopup(previewImageModal)
+);
 
-const likeButtons = document.querySelectorAll(".card__like-button");
-likeButtons.forEach((likeButton) => {
-  likeButton.addEventListener("click", () => {
-    likeButton.classList.toggle("card__like-button_active");
-  });
-});
+initialCards.forEach((cardData) => renderCard(cardData, cardListEl));

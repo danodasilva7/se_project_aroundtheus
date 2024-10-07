@@ -94,14 +94,28 @@
             required
           />
           <button type="submit" value="Submit" class="button modal__button">
-            Save
+            Create
           </button>
         </form>
       </div>
     </div>
 
+    <!--- Open preview image modal -->
+    <div class="modal" id="preview-image-modal">
+      <div class="modal__container modal__container_content_image">
+        <button
+          class="modal__close"
+          type="button"
+          id="modal-close-button"
+        ></button>
+        <img class="modal__image" src="" alt="Preview Image" />
+        <p class="modal__caption"></p>
+      </div>
+    </div>
+
     <template id="card-template">
       <li class="card">
+        <button type="button" class="card__delete-button"></button>
         <img src="" class="card__image" alt="" />
         <div class="card__description">
           <h2 class="card__title"></h2>

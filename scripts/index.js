@@ -48,9 +48,10 @@ const addNewCardButton = document.querySelector(".profile__add-button");
 const profileEditButton = document.querySelector(".profile__edit-button");
 const profileName = document.querySelector(".profile__name");
 const profileDescription = document.querySelector(".profile__description");
-previewImageCloseButton = previewImageModal.querySelector(
-  "#modal-close-button"
+const previewImageCloseButton = previewImageModal.querySelector(
+  ".modal__close_preview"
 );
+const closeButtons = document.querySelectorAll(".modal__close");
 // Form Data
 const nameInput = profileEditForm.querySelector(".modal__input_type_name");
 const jobInput = profileEditForm.querySelector(
@@ -88,7 +89,7 @@ function getCardElement(cardData) {
   // add event listener to delete button
   // cardElement.remove();
   cardDeleteButton.addEventListener("click", () => {
-    cardElement.remove("card");
+    cardElement.remove();
   });
 
   cardImageEl.addEventListener("click", () => {
@@ -124,6 +125,7 @@ function handleAddCardFormSubmit(e) {
   const link = cardUrlInput.value;
   renderCard({ name, link }, cardListEl);
   closePopup(addCardModal);
+  e.target.reset();
 }
 
 /*------------------------Event Listeners-----------------------*/
@@ -133,19 +135,14 @@ profileEditButton.addEventListener("click", () => {
   openPopup(profileEditModal);
 });
 
-profileModalCloseButton.addEventListener("click", () =>
-  closePopup(profileEditModal)
-);
+closeButtons.forEach((button) => {
+  const popup = button.closest(".modal");
+  button.addEventListener("click", () => closePopup(popup));
+});
+
 addNewCardButton.addEventListener("click", () => openPopup(addCardModal));
-addCardModalCloseButton.addEventListener("click", () =>
-  closePopup(addCardModal)
-);
 
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 addCardFormElement.addEventListener("submit", handleAddCardFormSubmit);
-
-previewImageCloseButton.addEventListener("click", () =>
-  closePopup(previewImageModal)
-);
 
 initialCards.forEach((cardData) => renderCard(cardData, cardListEl));

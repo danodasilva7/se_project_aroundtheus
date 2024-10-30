@@ -132,6 +132,7 @@ function handleAddCardFormSubmit(e) {
 profileEditButton.addEventListener("click", () => {
   nameInput.value = profileName.textContent;
   jobInput.value = profileDescription.textContent;
+  resetValidation(profileEditForm, [nameInput, jobInput]);
   openPopup(profileEditModal);
 });
 

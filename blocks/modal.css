@@ -123,6 +123,18 @@
   opacity: 0.6;
 }
 
+.modal__button_disabled {
+  background-color: rgba(255, 255, 255, 1);
+  opacity: 20%;
+  color: rgba(0, 0, 0, 1);
+  border-color: rgba(0, 0, 0, 1);
+}
+
+.modal__label {
+  color: rgba(0, 0, 0, 1);
+  display: block;
+}
+
 .modal__input {
   height: 24px;
   margin: 0;
@@ -137,6 +149,16 @@
 
 .modal__input::placeholder {
   color: rgba(196, 196, 196, 1);
+}
+
+.modal__error {
+  display: block;
+  color: rgba(255, 0, 0, 1);
+  font-family: Inter;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.2;
+  text-align: left;
 }
 
 @media screen and (max-width: 620px) {

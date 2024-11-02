@@ -107,6 +107,7 @@
 
 .modal__button {
   height: 50px;
+  width: auto;
   padding: 0;
   background-color: #000000;
   color: #ffffff;
@@ -115,7 +116,6 @@
   font-size: 18px;
   font-weight: 400;
   line-height: 1.2;
-  margin-top: 18px;
 }
 
 .modal__button:hover {
@@ -127,28 +127,38 @@
   background-color: rgba(255, 255, 255, 1);
   opacity: 20%;
   color: rgba(0, 0, 0, 1);
-  border-color: rgba(0, 0, 0, 1);
+  border-style: solid;
+}
+disabled:hover {
+  background-color: rgba(255, 255, 255, 1);
 }
 
 .modal__label {
-  color: rgba(0, 0, 0, 1);
-  display: block;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
 .modal__input {
-  height: 24px;
+  height: 27px;
+  width: auto;
+  padding: 0px 0px 13px;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.2;
   margin: 0;
   padding: 0;
-  border: 1px;
-  border-bottom: solid rgba(0, 0, 0, 0.2);
+  border: none;
+  border-bottom: 1px solid rgba(196, 196, 196, 1);
 }
 
 .modal__input:hover {
   cursor: pointer;
 }
 
-.modal__input::placeholder {
-  color: rgba(196, 196, 196, 1);
+.modal__input_type_error {
+  border-bottom: 1px solid rgba(255, 0, 0, 1);
 }
 
 .modal__error {
@@ -159,6 +169,8 @@
   font-weight: 400;
   line-height: 1.2;
   text-align: left;
+  height: 12px;
+  margin-top: 5px;
 }
 
 @media screen and (max-width: 620px) {

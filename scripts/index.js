@@ -111,6 +111,16 @@ function getCardElement(cardData) {
   return cardElement;
 }
 
+function disableButton(submitButton, options) {
+  submitButton.classList.add(options.inactiveButtonClass);
+  submitButton.disabled = true;
+}
+
+function enableButton(submitButton, options) {
+  submitButton.classList.remove(options.inactiveButtonClass);
+  submitButton.disabled = false;
+}
+
 /*------------------------Event Handlers------------------------*/
 function handleProfileEditSubmit(e) {
   e.preventDefault();
@@ -125,6 +135,8 @@ function handleAddCardFormSubmit(e) {
   const link = cardUrlInput.value;
   renderCard({ name, link }, cardListEl);
   closePopup(addCardModal);
+  disableButton(submitButton, options);
+  enableButton(submitButton, options);
   e.target.reset();
 }
 
@@ -132,7 +144,6 @@ function handleAddCardFormSubmit(e) {
 profileEditButton.addEventListener("click", () => {
   nameInput.value = profileName.textContent;
   jobInput.value = profileDescription.textContent;
-  resetValidation(profileEditForm, [nameInput, jobInput]);
   openPopup(profileEditModal);
 });
 
@@ -147,3 +158,36 @@ profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 addCardFormElement.addEventListener("submit", handleAddCardFormSubmit);
 
 initialCards.forEach((cardData) => renderCard(cardData, cardListEl));
+
+function handleEscapeKeyPress(evt) {
+  if (evt.key === "Escape") {
+    closeActivePopup();
+  }
+}
+
+function handleOverlayClick(evt) {
+  if (evt.target.classList.contains("modal_opened")) {
+    closeActivePopup();
+  }
+}
+
+function openPopup(popup) {
+  popup.classList.add("modal_opened");
+  popup.setAttribute("tabindex", "-1");
+  popup.focus();
+  popup.addEventListener("keydown", handleEscapeKeyPress);
+  popup.addEventListener("click", handleOverlayClick);
+}
+
+function closePopup(popup) {
+  popup.classList.remove("modal_opened");
+  popup.removeEventListener("keydown", handleEscapeKeyPress);
+  popup.removeEventListener("click", handleOverlayClick);
+}
+
+function closeActivePopup() {
+  const popup = document.querySelector(".modal_opened");
+  if (popup) {
+    closePopup(popup);
+  }
+}

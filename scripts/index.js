@@ -136,7 +136,6 @@ function handleAddCardFormSubmit(e) {
   renderCard({ name, link }, cardListEl);
   closePopup(addCardModal);
   disableButton(submitButton, options);
-  enableButton(submitButton, options);
   e.target.reset();
 }
 

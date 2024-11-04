@@ -88,14 +88,14 @@
   font-weight: 900;
   line-height: 1.2;
   font-size: 24px;
-  margin: 0;
+  margin-bottom: 54px;
+  margin-top: 0;
   text-align: left;
 }
 
 .modal__form {
   display: grid;
-  max-width: 358px;
-  margin-top: 54px;
+  max-width: 430px;
   padding: 0;
   font-family: "Inter", "Arial", sans-serif;
   font-size: 14px;
@@ -129,7 +129,8 @@
   color: rgba(0, 0, 0, 1);
   border-style: solid;
 }
-disabled:hover {
+
+.modal__button_disabled:hover {
   background-color: rgba(255, 255, 255, 1);
 }
 
@@ -147,7 +148,6 @@ disabled:hover {
   font-weight: 400;
   font-size: 14px;
   line-height: 1.2;
-  margin: 0;
   padding: 0;
   border: none;
   border-bottom: 1px solid rgba(196, 196, 196, 1);
@@ -159,6 +159,10 @@ disabled:hover {
 
 .modal__input_type_error {
   border-bottom: 1px solid rgba(255, 0, 0, 1);
+}
+
+.modal__input::placeholder {
+  opacity: 20%;
 }
 
 .modal__error {

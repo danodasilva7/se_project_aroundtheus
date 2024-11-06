@@ -34,8 +34,8 @@ const cardTemplate = document
 const cardListEl = document.querySelector(".cards__list");
 const profileEditModal = document.querySelector("#profile-edit-modal");
 const addCardModal = document.querySelector("#add-card-modal");
-const addCardFormElement = addCardModal.querySelector(".modal__form");
-const profileEditForm = profileEditModal.querySelector(".modal__form");
+const cardForm = addCardModal.querySelector("#card-form");
+const profileForm = profileEditModal.querySelector("#profile-form");
 const previewImageModal = document.querySelector("#preview-image-modal");
 const previewImageModalimg = previewImageModal.querySelector(".modal__image");
 const previewImageModalCaption =
@@ -54,16 +54,12 @@ const previewImageCloseButton = previewImageModal.querySelector(
 );
 const closeButtons = document.querySelectorAll(".modal__close");
 // Form Data
-const nameInput = profileEditForm.querySelector(".modal__input_type_name");
-const jobInput = profileEditForm.querySelector(
-  ".modal__input_type_description"
-);
+const nameInput = profileForm.querySelector(".modal__input_type_name");
+const jobInput = profileForm.querySelector(".modal__input_type_description");
 
-const cardTitleInput = addCardFormElement.querySelector(
-  ".modal__input_type_title"
-);
+const cardTitleInput = cardForm.querySelector(".modal__input_type_title");
 
-const cardUrlInput = addCardFormElement.querySelector(".modal__input_type_url");
+const cardUrlInput = cardForm.querySelector(".modal__input_type_url");
 
 /*---------------------------Functions--------------------------*/
 function closePopup(modal) {
@@ -112,22 +108,13 @@ function getCardElement(cardData) {
   return cardElement;
 }
 
-function disableButton(submitButton, options) {
-  submitButton.classList.add(options.inactiveButtonClass);
-  submitButton.disabled = true;
-}
-
-function enableButton(submitButton, options) {
-  submitButton.classList.remove(options.inactiveButtonClass);
-  submitButton.disabled = false;
-}
-
 /*------------------------Event Handlers------------------------*/
 function handleProfileEditSubmit(e) {
   e.preventDefault();
   profileName.textContent = nameInput.value;
   profileDescription.textContent = jobInput.value;
   closePopup(profileEditModal);
+  disableButton(submitButton, options);
 }
 
 function handleAddCardFormSubmit(e) {
@@ -154,19 +141,19 @@ closeButtons.forEach((button) => {
 
 addNewCardButton.addEventListener("click", () => openPopup(addCardModal));
 
-profileEditForm.addEventListener("submit", handleProfileEditSubmit);
-addCardFormElement.addEventListener("submit", handleAddCardFormSubmit);
+profileForm.addEventListener("submit", handleProfileEditSubmit);
+cardForm.addEventListener("submit", handleAddCardFormSubmit);
 
 initialCards.forEach((cardData) => renderCard(cardData, cardListEl));
 
-function handleEscapeKeyPress(evt) {
-  if (evt.key === "Escape") {
+function handleEscapeKeyPress(e) {
+  if (e.key === "Escape") {
     closeActivePopup();
   }
 }
 
-function handleOverlayClick(evt) {
-  if (evt.target.classList.contains("modal_opened")) {
+function handleOverlayClick(e) {
+  if (e.target.classList.contains("modal_opened")) {
     closeActivePopup();
   }
 }

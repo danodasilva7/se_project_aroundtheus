@@ -62,13 +62,6 @@ const cardTitleInput = cardForm.querySelector(".modal__input_type_title");
 const cardUrlInput = cardForm.querySelector(".modal__input_type_url");
 
 /*---------------------------Functions--------------------------*/
-function closePopup(modal) {
-  modal.classList.remove("modal_opened");
-}
-
-function openPopup(modal) {
-  modal.classList.add("modal_opened");
-}
 
 function renderCard(cardData) {
   const cardElement = getCardElement(cardData);

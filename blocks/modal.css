@@ -26,11 +26,11 @@
 
 .modal__container {
   position: relative;
-  padding: 36px;
+  padding: 34px 36px 36px;
   background-color: #ffffff;
   border-radius: 10px;
   width: 358px;
-  height: 258px;
+  height: 260px;
 }
 
 .modal__image-container {
@@ -88,30 +88,32 @@
   font-weight: 900;
   line-height: 1.2;
   font-size: 24px;
-  margin-bottom: 54px;
-  margin-top: 0;
+  margin: 0;
+  padding: 0;
   text-align: left;
 }
 
 .modal__form {
   display: grid;
   max-width: 430px;
+  max-height: 182px;
   padding: 0;
+  margin-top: 54px;
   font-family: "Inter", "Arial", sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 1.2;
   text-align: left;
-  row-gap: 30px;
 }
 
 .modal__button {
   height: 50px;
   width: auto;
   padding: 0;
+  margin-top: 16px;
   background-color: #000000;
   color: #ffffff;
-  border: 2px;
+  border: 1px;
   border-radius: 2px;
   font-size: 18px;
   font-weight: 400;
@@ -141,9 +143,9 @@
 }
 
 .modal__input {
-  height: 27px;
+  height: 26px;
   width: auto;
-  padding: 0px 0px 13px;
+  padding: 0;
   font-family: "Inter", Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 14px;
@@ -173,8 +175,12 @@
   font-weight: 400;
   line-height: 1.2;
   text-align: left;
-  height: 12px;
   margin-top: 5px;
+}
+
+.modal__label {
+  height: 44px;
+  margin-bottom: 13px;
 }
 
 @media screen and (max-width: 620px) {
@@ -183,14 +189,10 @@
     max-width: 282px;
     padding: 0;
     margin-top: 54px;
-    row-gap: 30px;
   }
 
   .modal__container {
-    position: relative;
     padding: 0;
-    background-color: #ffffff;
-    border-radius: 10px;
     width: 282px;
     height: 322px;
   }
@@ -202,7 +204,7 @@
   .modal__input {
     width: 238px;
     height: 23px;
-    margin: auto;
+    margin: 0;
   }
 
   .modal__input:last-of-type {
@@ -213,7 +215,8 @@
   .modal__button {
     max-height: 46px;
     justify-content: center;
-    margin: 16px 22px 25px;
+    margin: 32px 22px 25px;
+    font-size: 14px;
   }
 
   .modal__title {
@@ -227,10 +230,12 @@
   }
 
   .modal__close {
-    top: -40px;
-    right: 3px;
+    position: absolute;
+    top: -48px;
+    right: 8px;
     height: 26px;
     width: 26px;
+    padding: 0;
   }
 
   .modal__close_preview {

@@ -1,3 +1,6 @@
+import Card from "../components/Card.js";
+import formValidator from "../components/FormValidator.js";
+
 const initialCards = [
   {
     name: "Yosemite Valley",
@@ -24,6 +27,14 @@ const initialCards = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/lago.jpg",
   },
 ];
+
+const cardData = {
+  name: "Yosemite Valley",
+  link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
+};
+
+const card = new Card(cardData, "#card-template");
+card.getView();
 
 const cardTemplate = document
   .querySelector("#card-template")
@@ -77,18 +88,17 @@ function getCardElement(cardData) {
   const cardDeleteButton = cardElement.querySelector(".card__delete-button");
 
   // add event listener to delete button
-  // cardElement.remove();
   cardDeleteButton.addEventListener("click", () => {
     cardElement.remove();
   });
 
+  //openPopup with previewImageModal
   cardImageEl.addEventListener("click", () => {
     previewImageModalimg.setAttribute("src", cardData.link);
     previewImageModalimg.setAttribute("alt", cardData.name);
     previewImageModalCaption.textContent = cardData.name;
     openPopup(previewImageModal);
   });
-  //openPopup with previewImageModal
 
   likeButton.addEventListener("click", () => {
     likeButton.classList.toggle("card__like-button_active");

@@ -1,4 +1,4 @@
-export default class Card {
+class Card {
   constructor({ name, link }, cardSelector, handleImageClick) {
     this._name = name;
     this._link = link;
@@ -35,10 +35,6 @@ export default class Card {
       .classList.toggle("card__like-button_active");
   }
 
-  _deleteCard() {
-    this._cardElement.remove();
-  }
-
   getView() {
     this._cardElement = document
       .querySelector(this._cardSelector)
@@ -48,5 +44,8 @@ export default class Card {
     //set event listeners
     this._setEventListeners();
     //return the card
+    return this._cardElement;
   }
 }
+
+export default Card;

@@ -67,12 +67,13 @@ class FormValidator {
     this._inputList.forEach((inputElement) => {
       inputElement.addEventListener("input", () => {
         this._checkInputValidity(inputElement);
+        this._setEventListeners();
         this._toggleButtonState();
       });
     });
   }
 
-  enableValidation(options) {
+  enableValidation() {
     this._element.addEventListener("submit", (e) => {
       e.preventDefault();
     });
@@ -85,6 +86,7 @@ class FormValidator {
     });
 
     this._toggleButtonState();
+    this._setEventListeners();
   }
 }
 

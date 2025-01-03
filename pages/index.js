@@ -97,6 +97,11 @@ addFormValidator.enableValidation();
 
 /*---------------------------Functions--------------------------*/
 
+function disableButton(button, options) {
+  button.classList.add(options.inactiveButtonClass);
+  button.disabled = true;
+}
+
 function renderCard(cardData, cardListEl) {
   const cardElement = getCardElement(cardData);
   cardListEl.prepend(cardElement);
@@ -140,7 +145,7 @@ function handleProfileEditSubmit(e) {
   profileName.textContent = nameInput.value;
   profileDescription.textContent = jobInput.value;
   closePopup(profileEditModal);
-  disableButton(submitButton, options);
+  disableButton(submitButton, validationOptions);
 }
 
 function handleAddCardFormSubmit(e) {
@@ -149,7 +154,7 @@ function handleAddCardFormSubmit(e) {
   const link = cardUrlInput.value;
   renderCard({ name, link }, cardListEl);
   closePopup(addCardModal);
-  disableButton(submitButton, options);
+  disableButton(submitButton, validationOptions);
   e.target.reset();
 }
 

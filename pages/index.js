@@ -1,5 +1,5 @@
-import FormValidator from "./FormValidator.js";
-import Card from "./Card.js";
+import FormValidator from "../components/FormValidator.js";
+import Card from "../components/Card.js";
 
 const initialCards = [
   {
@@ -58,11 +58,6 @@ const validationOptions = {
   errorClass: "modal__error_visible",
 };
 
-const editFormValidator = new FormValidator(validationOptions, profileForm);
-const addFormValidator = new FormValidator(validationOptions, cardForm);
-editFormValidator.enableValidation();
-addFormValidator.enableValidation();
-
 // Wrappers
 
 const cardListEl = document.querySelector(".cards__list");
@@ -95,9 +90,14 @@ const cardTitleInput = cardForm.querySelector(".modal__input_type_title");
 
 const cardUrlInput = cardForm.querySelector(".modal__input_type_url");
 
+const editFormValidator = new FormValidator(validationOptions, profileForm);
+const addFormValidator = new FormValidator(validationOptions, cardForm);
+editFormValidator.enableValidation();
+addFormValidator.enableValidation();
+
 /*---------------------------Functions--------------------------*/
 
-function renderCard(cardData) {
+function renderCard(cardData, cardListEl) {
   const cardElement = getCardElement(cardData);
   cardListEl.prepend(cardElement);
 }

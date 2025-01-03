@@ -76,7 +76,7 @@ class FormValidator {
     this._element.addEventListener("submit", (e) => {
       e.preventDefault();
     });
-    this._setEventListeners(formEl, options);
+    this._setEventListeners();
   }
 
   resetValidation() {

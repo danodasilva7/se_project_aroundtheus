@@ -1,7 +1,9 @@
 import FormValidator from "../components/FormValidator.js";
 import Card from "../components/Card.js";
 
-const initialCards = [
+// Card data
+
+const cardData = [
   {
     name: "Yosemite Valley",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
@@ -28,32 +30,13 @@ const initialCards = [
   },
 ];
 
-const cardData = {
-  name: "Yosemite Valley",
-  link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
-  name: "Lake Louise",
-  link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/lake-louise.jpg",
-  name: "Bald Mountains",
-  link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/bald-mountains.jpg",
-  name: "Latemar",
-  link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/latemar.jpg",
-  name: "Vanoise National Park",
-  link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/vanoise.jpg",
-  name: "Lago di Braies",
-  link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/lago.jpg",
-};
-
-const card = new Card(cardData, "#card-template");
-card.getView();
-
-const cardTemplate = document
-  .querySelector("#card-template")
-  .content.querySelector(".card");
+// Validation Options
 
 const validationOptions = {
   inputSelector: ".modal__input",
   submitButtonSelector: ".modal__button",
   inactiveButtonClass: "modal__button_disabled",
+  disabledButtonClass: ".modal__button_disabled",
   inputErrorClass: "modal__input_type_error",
   errorClass: "modal__error_visible",
 };
@@ -102,42 +85,43 @@ function disableButton(button, options) {
   button.disabled = true;
 }
 
-function renderCard(cardData, cardListEl) {
-  const cardElement = getCardElement(cardData);
+const renderCard = (cardData, cardListEl) => {
+  const card = new Card(cardData, "#card-template");
+  const cardElement = card.getView();
   cardListEl.prepend(cardElement);
-}
+};
 
-function getCardElement(cardData) {
-  const cardElement = cardTemplate.cloneNode(true);
-  const cardImageEl = cardElement.querySelector(".card__image");
-  const cardTitleEl = cardElement.querySelector(".card__title");
-  const likeButton = cardElement.querySelector(".card__like-button");
-  // find delete button
-  const cardDeleteButton = cardElement.querySelector(".card__delete-button");
+//function getCardElement(cardData) {
+//  const cardElement = cardTemplate.cloneNode(true);
+//  const cardImageEl = cardElement.querySelector(".card__image");
+//  const cardTitleEl = cardElement.querySelector(".card__title");
+//  const likeButton = cardElement.querySelector(".card__like-button");
+//  find delete button
+//  const cardDeleteButton = cardElement.querySelector(".card__delete-button");
 
-  // add event listener to delete button
-  cardDeleteButton.addEventListener("click", () => {
-    cardElement.remove();
-  });
+//  add event listener to delete button
+//  cardDeleteButton.addEventListener("click", () => {
+//    cardElement.remove();
+//  });
 
-  //openPopup with previewImageModal
-  cardImageEl.addEventListener("click", () => {
-    previewImageModalimg.setAttribute("src", cardData.link);
-    previewImageModalimg.setAttribute("alt", cardData.name);
-    previewImageModalCaption.textContent = cardData.name;
-    openPopup(previewImageModal);
-  });
+//  openPopup with previewImageModal
+//  cardImageEl.addEventListener("click", () => {
+//    previewImageModalimg.setAttribute("src", cardData.link);
+//    previewImageModalimg.setAttribute("alt", cardData.name);
+//    previewImageModalCaption.textContent = cardData.name;
+//    openPopup(previewImageModal);
+//  });
 
-  likeButton.addEventListener("click", () => {
-    likeButton.classList.toggle("card__like-button_active");
-  });
+//  likeButton.addEventListener("click", () => {
+//    likeButton.classList.toggle("card__like-button_active");
+//  });
 
-  cardImageEl.src = cardData.link;
-  cardImageEl.alt = cardData.name;
-  cardTitleEl.textContent = cardData.name;
+//  cardImageEl.src = cardData.link;
+//  cardImageEl.alt = cardData.name;
+//  cardTitleEl.textContent = cardData.name;
 
-  return cardElement;
-}
+//  return cardElement;
+//}
 
 /*------------------------Event Handlers------------------------*/
 function handleProfileEditSubmit(e) {
@@ -145,7 +129,6 @@ function handleProfileEditSubmit(e) {
   profileName.textContent = nameInput.value;
   profileDescription.textContent = jobInput.value;
   closePopup(profileEditModal);
-  disableButton(submitButton, validationOptions);
 }
 
 function handleAddCardFormSubmit(e) {
@@ -175,7 +158,7 @@ addNewCardButton.addEventListener("click", () => openPopup(addCardModal));
 profileForm.addEventListener("submit", handleProfileEditSubmit);
 cardForm.addEventListener("submit", handleAddCardFormSubmit);
 
-initialCards.forEach((cardData) => renderCard(cardData, cardListEl));
+cardData.forEach((card) => renderCard(card, cardListEl));
 
 function handleEscapeKeyPress(e) {
   if (e.key === "Escape") {

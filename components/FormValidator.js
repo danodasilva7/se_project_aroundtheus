@@ -5,7 +5,7 @@ class FormValidator {
     this._inactiveButtonClass = options.inactiveButtonClass;
     this._inputErrorClass = options.inputErrorClass;
     this._errorClass = options.errorClass;
-
+    //this._inactiveButtonClass = options.disabledButtonClass;
     this._element = formElement;
   }
 
@@ -51,10 +51,10 @@ class FormValidator {
     }
   }
 
-  disableButton() {
-    this._buttonElement.classList.add(this._inactiveButtonClass);
-    this._buttonElement.disabled = true;
-  }
+  //disableButton() {
+  //  this._buttonElement.classList.add(this._disabledButtonClass);
+  // this._buttonElement.disabled = true;
+  //}
 
   _setEventListeners() {
     this._inputList = Array.from(

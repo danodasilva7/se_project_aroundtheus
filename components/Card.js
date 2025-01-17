@@ -1,17 +1,9 @@
 class Card {
   constructor(cardData, cardSelector, previewImageModal) {
-    this._previewImageModal = previewImageModal;
     this._name = cardData.name;
     this._link = cardData.link;
     this._cardSelector = cardSelector;
-  }
-
-  _getTemplate() {
-    const cardElement = document
-      .querySelector(this._cardSelector)
-      .content.firstElementChild.cloneNode(true);
-
-    return cardElement;
+    this._previewImageModal = previewImageModal;
   }
 
   _setEventListeners() {
@@ -33,26 +25,8 @@ class Card {
     this._cardElement
       .querySelector(".card__image")
       .addEventListener("click", () => {
-        this._handleImageClick(this._name, this._link, this._previewImageModal);
+        this._previewImageModal(this._name, this._link);
       });
-  }
-
-  _handleImageClick(name, link, modal) {
-    const cardImageEl = this._cardElement.querySelector(".card__image");
-    const cardTitleEl = this._cardElement.querySelector(".card__title");
-    cardImageEl.src = this._link;
-    cardImageEl.alt = this._name;
-    cardTitleEl.textContent = this._name;
-    this.openPopup(modal);
-  }
-
-  openPopup(popup) {
-    const popupElement = document.querySelector(".modal__image");
-    if (popupElement) {
-      popupElement.classList.add(".modal_opened");
-    } else {
-      return console.log("popup not found");
-    }
   }
 
   _toggleLike() {

@@ -85,43 +85,18 @@ function disableButton(button, options) {
   button.disabled = true;
 }
 
+function handlePreviewModal(name, link) {
+  previewImageModalimg.src = link;
+  previewImageModalimg.alt = name;
+  previewImageModalCaption.textContent = name;
+  openPopup(previewImageModal);
+}
+
 const renderCard = (cardData, cardListEl) => {
-  const card = new Card(cardData, "#card-template");
+  const card = new Card(cardData, "#card-template", handlePreviewModal);
   const cardElement = card.getView();
   cardListEl.prepend(cardElement);
 };
-
-//function getCardElement(cardData) {
-//const cardElement = cardTemplate.cloneNode(true);
-//const cardImageEl = cardElement.querySelector(".card__image");
-//  const cardTitleEl = cardElement.querySelector(".card__title");
-//  const likeButton = cardElement.querySelector(".card__like-button");
-//  find delete button
-//  const cardDeleteButton = cardElement.querySelector(".card__delete-button");
-
-//  add event listener to delete button
-//  cardDeleteButton.addEventListener("click", () => {
-//    cardElement.remove();
-//  });
-
-// openPopup with previewImageModal
-//cardImageEl.addEventListener("click", () => {
-//previewImageModalimg.setAttribute("src", cardData.link);
-// previewImageModalimg.setAttribute("alt", cardData.name);
-//previewImageModalCaption.textContent = cardData.name;
-//openPopup(previewImageModal);
-//});
-
-//  likeButton.addEventListener("click", () => {
-//    likeButton.classList.toggle("card__like-button_active");
-//  });
-
-//  cardImageEl.src = cardData.link;
-//  cardImageEl.alt = cardData.name;
-//  cardTitleEl.textContent = cardData.name;
-
-//  return cardElement;
-//}
 
 /*------------------------Event Handlers------------------------*/
 function handleProfileEditSubmit(e) {

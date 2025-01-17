@@ -49,9 +49,9 @@ class Card {
   openPopup(popup) {
     const popupElement = document.querySelector(".modal__image");
     if (popupElement) {
-      popupElement.classList.add("modal_open");
+      popupElement.classList.add(".modal_opened");
     } else {
-      console.error("Popup element not found");
+      return console.log("popup not found");
     }
   }
 

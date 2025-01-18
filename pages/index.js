@@ -36,7 +36,6 @@ const validationOptions = {
   inputSelector: ".modal__input",
   submitButtonSelector: ".modal__button",
   inactiveButtonClass: "modal__button_disabled",
-  disabledButtonClass: ".modal__button_disabled",
   inputErrorClass: "modal__input_type_error",
   errorClass: "modal__error_visible",
 };
@@ -80,10 +79,10 @@ addFormValidator.enableValidation();
 
 /*---------------------------Functions--------------------------*/
 
-function disableButton(button, options) {
-  button.classList.add(options.inactiveButtonClass);
-  button.disabled = true;
-}
+//function disableButton(button, options) {
+// button.classList.add(options.inactiveButtonClass);
+// button.disabled = true;
+//}
 
 function handlePreviewModal(name, link) {
   previewImageModalimg.src = link;
@@ -112,7 +111,6 @@ function handleAddCardFormSubmit(e) {
   const link = cardUrlInput.value;
   renderCard({ name, link }, cardListEl);
   closePopup(addCardModal);
-  disableButton(e.submitter, validationOptions);
   e.target.reset();
 }
 
